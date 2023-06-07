@@ -1,14 +1,34 @@
 import { Button } from 'react-daisyui';
 import logo from '../assets/download.jpg';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../Providers/AuthProvider';
 
 const Navbar = () => {
+    const {user,logOut}=useContext(AuthContext);
+    
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error));
+    }
     const navOption =<>
      <li><Link>Home</Link></li>
      <li><Link>Instructor</Link></li> 
       <li><Link>Classess</Link></li>
-      <li><Link>DashBoard</Link></li>
-      <li><Link><Button style={{background:"DarkOrchid"}} className=''>Log in</Button></Link></li>
+     {
+        user && 
+        <li><Link>DashBoard</Link></li>
+     }
+     
+      {
+            user ? <>
+                <span>{user?.displayName}</span>
+                <button style={{background:"DarkOrchid"}} onClick={handleLogOut} className="btn btn-ghost">Log out</button>
+            </> : <>
+                <li><Link to="/login"><Button style={{background:"DarkOrchid"}} className='btn btn-ghost'>Log In</Button></Link></li>
+            </>
+        }
     </>
   return(
       <>
@@ -23,7 +43,7 @@ const Navbar = () => {
                   </ul>
               </div>
               <img className='rounded-full' style={{height:"4rem"}} src={logo} alt="" />
-              <a className="btn btn-ghost normal-case text-xl">Makeup Schooling</a>
+              <a className="btn btn-ghost normal-case text-xl">MAKEUP SCHOLLING</a>
           </div>
           <div className="navbar-center hidden lg:flex">
               <ul className="menu menu-horizontal px-1">
@@ -31,9 +51,12 @@ const Navbar = () => {
               </ul>
           </div>
           <div className="navbar-end">
-          <div className="w-10 rounded-full">
-          <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-        </div>
+        {
+            user &&
+            <div className=" w-10 h-10 rounded-full">
+            <img className="w-10 h-10 rounded-full" src={user.photoURL}></img>
+            </div>
+        }
           </div>
       </div>
   </>
