@@ -11,12 +11,12 @@ const Classes = ({classe}) => {
   <div className="card-body items-center text-center">
     <h2 className="card-title uppercase">{className}</h2>
     <p>{instructorName}</p>
-    <div className="md:flex">
+    <div className="md:flex gap-3">
         <p><small>Abailable Seats:{availableSeat}</small></p>
         <p>$<small>{price}</small></p>
     </div>
     <div className="card-actions">
-      <button className="btn btn-primary">Select</button>
+      <button style={{background:"DarkOrchid"}} className="btn btn-primary">Select</button>
     </div>
   </div>
 </div> 
