@@ -5,6 +5,8 @@ import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home";
 import Signup from "../Pages/Home/Login/Signup";
 import Login from "../Pages/Home/Login/Login";
+import Instructor from "../Pages/Instructor/Instructor";
+import Allclass from "../Pages/AllClass.jsx/Allclass";
 
 
 
@@ -24,7 +26,16 @@ import Login from "../Pages/Home/Login/Login";
         {
           path:'/login',
           element:<Login></Login>
+        },
+        {
+          path:'/instructor',
+          element:<Instructor></Instructor>
+        },
+        {
+          path:'/allclass',
+          element:<Allclass></Allclass>
         }
       ]
     },
+     
   ]);

@@ -14,8 +14,8 @@ const Navbar = () => {
     }
     const navOption =<>
      <li><Link>Home</Link></li>
-     <li><Link>Instructor</Link></li> 
-      <li><Link>Classess</Link></li>
+     <li><Link to='/instructor'>Instructor</Link></li> 
+      <li><Link to='/allclass'>Classess</Link></li>
      {
         user && 
         <li><Link>DashBoard</Link></li>
