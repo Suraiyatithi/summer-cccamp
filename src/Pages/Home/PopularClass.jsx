@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Shorting from './Shorting/Shorting';
+import PrpularINs from './Shorting/PrpularINs';
 
 
 const PopularClass = () => {
@@ -26,6 +27,16 @@ const PopularClass = () => {
 }
        </div>
        
+
+       <div className="">
+        <h2 className='text-center'>POPULAR INSTRUCTOR CLASS</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 text-center m-8">
+        {
+        topSixStudents.map(pic=><PrpularINs key={pic._id} pic={pic}></PrpularINs>)
+}
+    
+        </div>
+       </div>
         </div>
     );
 };
