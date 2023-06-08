@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2'
 import Navimg from '../Navimg';
+import Sociallogin from './Sociallogin';
 
 
 
@@ -91,7 +92,9 @@ const Login = () => {
                               <input style={{background:"DarkOrchid"}} className="btn btn-primary" type="submit" value="Sign Up" />
                           </div>
                       </form>
+                      <Sociallogin></Sociallogin>
                       <p><small>Do not have any account? <Link to="/signup">Signup</Link></small></p>
+                     
                   </div>
               </div>
           </div>

@@ -32,10 +32,10 @@ const Sociallogin = () => {
     }
     return (
         <div>
-        <div className="divider"></div>
-        <div className="w-full text-center my-4">
-            <button onClick={GoogleSignIn} className="btn">
-                With Google<FaGoogle></FaGoogle>
+    
+        <div className="w-full text-center">
+            <button onClick={GoogleSignIn} className="btn bg-orange-600 text-white px-12 w-5/6 lowercase">
+                with google <FaGoogle></FaGoogle>
             </button>
         </div>
     </div>
