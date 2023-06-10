@@ -2,6 +2,7 @@ import React from 'react';
 import AxiosSecure from '../../../Hooks/AxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
+import { FaChalkboardTeacher, FaChessKing } from 'react-icons/fa';
 
 const ManageUser = () => {
   const  [axiossecure]=AxiosSecure();
@@ -31,25 +32,25 @@ const handlemakeadmin=(user)=>{
         }
     })
 }
-// const handlemakeinstructor=(user)=>{
-//     fetch(`http://localhost:5000/users/instructor/${user._id}`, {
-//         method: 'PATCH'
-//     })
-//     .then(res => res.json())
-//     .then(data => {
-//         console.log(data)
-//         if(data.modifiedCount){
-//             refetch();
-//             Swal.fire({
-//                 position: 'top-end',
-//                 icon: 'success',
-//                 title: `${user.name} is an Admin Now!`,
-//                 showConfirmButton: false,
-//                 timer: 1500
-//               })
-//         }
-//     })
-// }
+const handlemakeinstructor=(user)=>{
+    fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+        method: 'PATCH'
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+        if(data.modifiedCount){
+            refetch();
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: `${user.name} is an instructor Now!`,
+                showConfirmButton: false,
+                timer: 1500
+              })
+        }
+    })
+}
     return (
         <div>
             
@@ -63,8 +64,8 @@ const handlemakeadmin=(user)=>{
                             <th>#</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Role</th>
-                            <th>Action</th>
+                            <th>Admin</th>
+                            <th>Instructor</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -74,9 +75,12 @@ const handlemakeadmin=(user)=>{
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
                                 <td>{ user.role === 'admin' ? 'admin' :
-                                    <button onClick={() => handlemakeadmin(user)} className="btn btn-ghost bg-orange-600  text-white">Admin</button> 
+                                    <button onClick={() => handlemakeadmin(user)} className="btn btn-ghost bg-rose-900  text-white"><FaChessKing></FaChessKing></button> 
                                     }</td>
-                                {/* <td><button onClick={() => handleDelete(user)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button></td> */}
+                                         <td>{ user.role === 'instructor' ? 'instructor' :
+                                         <button onClick={() => handlemakeinstructor(user)} className="btn btn-ghost bg-rose-900  text-white"><FaChalkboardTeacher></FaChalkboardTeacher></button> 
+                                         }</td>
+
                             </tr>)
                         }
                         
