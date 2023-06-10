@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2'
 import Navimg from '../Navimg';
 import Sociallogin from './Sociallogin';
-import { FaEye, FaEyeDropper, FaEyeSlash } from 'react-icons/fa';
+import { FaEye,FaEyeSlash } from 'react-icons/fa';
 
 
 
@@ -51,20 +51,7 @@ const Login = () => {
                   <div className="card flex-shrink-0 w-full max-w-sm bg-base-100">
                     <h3 style={{color:"DarkOrchid"}} className='ml-6'>Please !Log In</h3>
                       <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-                          {/* <div className="form-control">
-                              <label className="label">
-                                  <span className="label-text">Name</span>
-                              </label>
-                              <input type="text"  {...register("name", { required: true })} name="name" placeholder="Name" className="input input-bordered" />
-                              {errors.name && <span className="text-red-600">Name is required</span>}
-                          </div> */}
-                          {/* <div className="form-control">
-                              <label className="label">
-                                  <span className="label-text">Photo URL</span>
-                              </label>
-                              <input type="text"  {...register("photoURL", { required: true })} placeholder="Photo URL" className="input input-bordered" />
-                              {errors.photoURL && <span className="text-red-600">Photo URL is required</span>}
-                          </div> */}
+                        
                           <div className="form-control">
                               <label className="label">
                                   <span className="label-text">Email</span>
@@ -81,12 +68,15 @@ const Login = () => {
                                   minLength: 6,
                                   maxLength: 20,
                                   pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
-                              })} placeholder="password" className="input input-bordered" />
+                              })} placeholder="password" className="input input-bordered" 
+                             
+                              
+                              />
                                <h1 onClick={() => setShow(!show)}><h1 className='ml-8'>
                         {
                             show ? <span><FaEye></FaEye></span>: <span><FaEyeSlash></FaEyeSlash></span>
-                        }
-                        </h1></h1>
+                        } 
+                         </h1></h1>
                               {errors.password?.type === 'required' && <p className="text-red-600">Password is required</p>}
                               {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
                               {errors.password?.type === 'maxLength' && <p className="text-red-600">Password must be less than 20 characters</p>}
