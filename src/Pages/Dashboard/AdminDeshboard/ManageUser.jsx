@@ -66,7 +66,7 @@ const handlemakeinstructor=(user)=>{
                             <th>Email</th>
                             <th>Admin</th>
                             <th>Instructor</th>
-                        </tr>
+                        </tr>  
                     </thead>
                     <tbody>
                         {
