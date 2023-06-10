@@ -7,6 +7,14 @@ import Signup from "../Pages/Home/Login/Signup";
 import Login from "../Pages/Home/Login/Login";
 import Instructor from "../Pages/Instructor/Instructor";
 import Allclass from "../Pages/AllClass.jsx/Allclass";
+import Dashboard from "../Layout/Dashboard";
+import MyselectClass from "../Pages/Dashboard/UserDeshboard/MyselectClass";
+import Enrolledclass from "../Pages/Dashboard/UserDeshboard/Enrolledclass";
+import PaymentHistory from "../Pages/Dashboard/UserDeshboard/PaymentHistory";
+import MyClass from "../Pages/Dashboard/Instructor/MyClass";
+import AddClass from "../Pages/Dashboard/Instructor/AddClass";
+import ManageUser from "../Pages/Dashboard/AdminDeshboard/ManageUser";
+import ManageClass from "../Pages/Dashboard/AdminDeshboard/ManageClass";
 
 
 
@@ -37,5 +45,39 @@ import Allclass from "../Pages/AllClass.jsx/Allclass";
         }
       ]
     },
+    {
+      path:'dashboard',
+      element:<Dashboard></Dashboard>,
+      children:[
+        {
+          path:'myselected',
+          element:<MyselectClass></MyselectClass>
+        },
+        {
+          path:'myenroll',
+          element:<Enrolledclass></Enrolledclass>
+        },
+        {
+          path:'paymenthistory',
+          element:<PaymentHistory></PaymentHistory>
+        },
+        {
+          path:'myclass',
+          element:<MyClass></MyClass>
+        },
+        {
+          path:'addclass',
+          element:<AddClass></AddClass>
+        },
+        {
+          path:'manageuser',
+          element:<ManageUser></ManageUser>
+        },
+        {
+          path:'manageclass',
+          element:<ManageClass></ManageClass>
+        }
+      ]
+    }
      
   ]);

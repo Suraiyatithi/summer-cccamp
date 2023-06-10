@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import img from '../../../assets/login.jpg'
 import { AuthContext } from '../../../Providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -6,10 +6,12 @@ import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2'
 import Navimg from '../Navimg';
 import Sociallogin from './Sociallogin';
+import { FaEye, FaEyeDropper, FaEyeSlash } from 'react-icons/fa';
 
 
 
 const Login = () => {
+    const [show, setShow] = useState(false);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -74,12 +76,17 @@ const Login = () => {
                               <label className="label">
                                   <span className="label-text">Password</span>
                               </label>
-                              <input type="password"  {...register("password", {
+                              <input type={show ? "text" : "password"}  {...register("password", {
                                   required: true,
                                   minLength: 6,
                                   maxLength: 20,
                                   pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
                               })} placeholder="password" className="input input-bordered" />
+                               <h1 onClick={() => setShow(!show)}><h1 className='ml-8'>
+                        {
+                            show ? <span><FaEye></FaEye></span>: <span><FaEyeSlash></FaEyeSlash></span>
+                        }
+                        </h1></h1>
                               {errors.password?.type === 'required' && <p className="text-red-600">Password is required</p>}
                               {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
                               {errors.password?.type === 'maxLength' && <p className="text-red-600">Password must be less than 20 characters</p>}
@@ -88,6 +95,15 @@ const Login = () => {
                                   <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                               </label>
                           </div>
+                          {/* <div className="form-control">
+                    <label htmlFor="password">Password</label>
+                    <input type={show ? "text" : "password"} name="password" id="" required />
+                    <p onClick={() => setShow(!show)}><small>
+                        {
+                            show ? <span>Hide Password</span>: <span>Show Password</span>
+                        }
+                        </small></p>
+                </div> */}
                           <div className="form-control mt-6">
                               <input style={{background:"DarkOrchid"}} className="btn btn-primary" type="submit" value="Sign Up" />
                           </div>

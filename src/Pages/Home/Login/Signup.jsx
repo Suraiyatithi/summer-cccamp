@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import img from '../../../assets/login.jpg'
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Providers/AuthProvider";
@@ -12,8 +12,13 @@ const Signup = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { createUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
+    const [error,seterror]=useState('')
     const onSubmit = data => {
         console.log(data);
+        if(data.password!==data.confirm){
+            seterror('Your Passwlord did not match');
+            return
+        }
         createUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
@@ -99,6 +104,13 @@ const Signup = () => {
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Confirm Password</span>
+                            </label>
+                            <input type="password"  {...register("confirm", { required: true })} name="confirm" placeholder="confirm password" className="input input-bordered" />
+                           <p className="text-danger">{error}</p>
                         </div>
                         <div className="form-control mt-6">
                             <input style={{background:"DarkOrchid"}} className="btn btn-primary" type="submit" value="Sign Up" />
