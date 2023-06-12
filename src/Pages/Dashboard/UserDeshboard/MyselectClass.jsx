@@ -1,14 +1,46 @@
 import React from 'react';
 import useCart from '../../../Hooks/useCart';
+import { FaTrash } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 const MyselectClass = () => {
-    const [cart,refetch]=useCart();
-    console.log(cart);
+    const [carts,refetch]=useCart();
+    console.log(carts);
+
+
+    const handleDelete = item => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/carts/${item._id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            refetch();
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
+            }
+        })
+    }
 
 
     return (
         <div>
-            <h3 className='text-center bg-rose-900 text-white'>Selected Class:{cart.length}</h3>
+            <h3 className='text-center bg-rose-900 text-white'>Selected Class:{carts.length}</h3>
             <div className="overflow-x-auto w-full">
                 <table className='table w-full'>
                     <thead>
@@ -16,14 +48,15 @@ const MyselectClass = () => {
                             <th>#</th>
                             <th>Class</th>
                             <th>Class Name</th>
-                            <th>Instructor Name</th>
+    
                             <th>Price</th>
+                            <th>Delete</th>
                             <th>Pay</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            cart.map((item,index)=>
+                            carts.map((item,index)=>
                             <tr key={item._id}
                             
                             >
@@ -36,8 +69,9 @@ const MyselectClass = () => {
 </div>
                                 </td>
                                 <td>{item.className}</td>
-                                <td>{item.instructorName}</td>
+                                {/* <td>{item.instructorName}</td> */}
                                 <td>{item.price}</td>
+                                <td><button onClick={()=>handleDelete(item)}><FaTrash></FaTrash></button></td>
                                 <td><button className='btn bg-rose-900'>pay</button></td>
                             </tr>
                             )

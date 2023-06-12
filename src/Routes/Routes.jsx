@@ -15,6 +15,7 @@ import MyClass from "../Pages/Dashboard/Instructor/MyClass";
 import AddClass from "../Pages/Dashboard/Instructor/AddClass";
 import ManageUser from "../Pages/Dashboard/AdminDeshboard/ManageUser";
 import ManageClass from "../Pages/Dashboard/AdminDeshboard/ManageClass";
+import Payment from "../Pages/Dashboard/UserDeshboard/Payment";
 
 
 
@@ -56,6 +57,9 @@ import ManageClass from "../Pages/Dashboard/AdminDeshboard/ManageClass";
         {
           path:'myenroll',
           element:<Enrolledclass></Enrolledclass>
+        },
+        {path:'payment',
+        element:<Payment></Payment>
         },
         {
           path:'paymenthistory',
