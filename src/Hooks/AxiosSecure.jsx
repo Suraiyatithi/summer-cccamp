@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const AxiosSecure = () => {
     const {logOut}=useContext(AuthContext);
-    const navigate=useNavigate()
+    const navigate=useNavigate();
     const axiossecure=axios.create({
         baseURL:'http://localhost:5000',
     })

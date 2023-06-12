@@ -1,4 +1,4 @@
-import React from 'react';
+
 import useQuerys from '../../Hooks/useQuery';
 import Navimg from '../Home/Navimg'; 
     import Classes from './Classes';
