@@ -2,6 +2,7 @@ import React from 'react';
 import useCart from '../../../Hooks/useCart';
 import { FaTrash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const MyselectClass = () => {
     const [carts,refetch]=useCart();
@@ -72,7 +73,7 @@ const MyselectClass = () => {
                                 {/* <td>{item.instructorName}</td> */}
                                 <td>{item.price}</td>
                                 <td><button onClick={()=>handleDelete(item)}><FaTrash></FaTrash></button></td>
-                                <td><button className='btn bg-rose-900'>pay</button></td>
+                                <td><Link to={`/dashboard/payment/${item._id}`}><button className='btn bg-rose-900'>pay</button></Link></td>
                             </tr>
                             )
                         }

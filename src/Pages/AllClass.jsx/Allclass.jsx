@@ -5,6 +5,7 @@ import Navimg from '../Home/Navimg';
 
 const Allclass = () => {
     const [classes]=useQuerys();
+    const filteredData = classes.filter(item => item.status.toLowerCase() ==="approved");
 
     return (
         <div>
@@ -14,7 +15,7 @@ const Allclass = () => {
                 <h2>ALL CLASSES</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center px-6">
                     {
-                        classes.map(classe=><Classes key={classe._id} classe={classe}></Classes>)
+                        filteredData.map(classe=><Classes key={classe._id} classe={classe}></Classes>)
                     }
                 </div>
             </div>

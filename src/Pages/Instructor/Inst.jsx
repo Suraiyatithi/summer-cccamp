@@ -2,7 +2,7 @@ import React from 'react';
 import { useSpring, animated } from 'react-spring';
 
 const Inst = ({inst}) => {
-    const{instructorImg,instructorName,instructorEmail,className}=inst;
+    const{instructorImg,instructorName,email,className}=inst;
     const styles = useSpring({
         from: { opacity: 0, transform: 'scale(0.5)' },
         to: { opacity: 1, transform: 'scale(1)' },
@@ -18,7 +18,7 @@ const Inst = ({inst}) => {
                 <div className="md:ml-2">
                   
                     <p className="uppercase">{instructorName}</p>
-                    <p>{instructorEmail}</p>
+                    <p>{email}</p>
                     <p>{className}</p>
                     <button style={{background:"DarkOrchid"}} className="btn btn-outline border-0 border-b-4 mt-4 ">See classes</button>
                 </div>

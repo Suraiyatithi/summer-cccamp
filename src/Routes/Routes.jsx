@@ -52,15 +52,18 @@ import Payment from "../Pages/Dashboard/UserDeshboard/Payment";
       children:[
         {
           path:'myselected',
-          element:<MyselectClass></MyselectClass>
+          element:<MyselectClass></MyselectClass>,
         },
+            {path:'payment/:id',
+            element:<Payment></Payment>
+            ,  loader: ({params}) => fetch(`http://localhost:5000/carts/${params.id}`)
+            },
+  
         {
           path:'myenroll',
           element:<Enrolledclass></Enrolledclass>
         },
-        {path:'payment',
-        element:<Payment></Payment>
-        },
+     
         {
           path:'paymenthistory',
           element:<PaymentHistory></PaymentHistory>

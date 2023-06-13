@@ -50,6 +50,10 @@ const Dashboard = () => {
                             <li><NavLink to="/"><FaHome></FaHome> User Home</NavLink></li>
                             <li><NavLink to="/dashboard/myselected"><FaMapPin/>My Selected Class</NavLink></li>
                             <li><NavLink to="/dashboard/myenroll"><FaWallet></FaWallet>my enrolled class</NavLink></li>
+                            
+                            <li>   <NavLink to="/dashboard/payment"><FaMoneyBillAlt/> Payment
+                             
+                             </NavLink></li>
                             <li>
                                 <NavLink to="/dashboard/paymenthistory"><FaMoneyBillAlt/> Payment Histiory
                              
