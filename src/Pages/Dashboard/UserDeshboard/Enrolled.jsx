@@ -1,47 +1,51 @@
-import React, { useEffect, useState } from 'react';
 
-const PaymentHistory = () => {
+import React, { useEffect, useState } from 'react';
+import useQuerys from '../../../Hooks/useQuery';
+
+const Enrolled = () => {
+    const [classes]=useQuerys();
     const [history,setHistory]=useState([]);
     useEffect(()=>{
         fetch('http://localhost:5000/payments')
         .then(res=>res.json())
         .then(data=>{
             setHistory(data)
-        })
+        }) },[])
 
-    },[])
+        const filteredData = classes.filter(item => history.some(obj => obj.className === item.className));
+console.log(filteredData)
+
     return (
         <div>
-                       <table className='table w-full'>
+               <table className='table w-full'>
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Transection & <br></br>date</th>
+                            <th>Class</th>
                             <th>Class Name</th>
     
+                            <th>Price</th>
                          
-    
-                         <th>Email</th>
-                         <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            history.map((item,index)=>
+                            filteredData.map((item,index)=>
                             <tr key={item._id}
                             
                             >
                                 <td>{index +1}</td>
-                                <td>{item.transactionId} <br></br>
-                                {item.date}</td>
-                                
+                                <td>
+<div className="avatar">
+<div className="mask mask-squircle w-12 h-12">
+    <img src={item.classImg} alt="" />
+</div>
+</div>
+                                </td>
                                 <td>{item.className}</td>
-                              
-                          <td>{item.email}</td>
-                                <td>{item.status}</td>
-                             
-                            
-                            </tr>
+                                {/* <td>{item.instructorName}</td> */}
+                                <td>{item.price}</td>
+                              </tr>
                             )
                         }
                     </tbody>
@@ -51,4 +55,4 @@ const PaymentHistory = () => {
     );
 };
 
-export default PaymentHistory;
+export default Enrolled;
