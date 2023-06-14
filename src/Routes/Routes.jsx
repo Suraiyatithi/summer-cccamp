@@ -16,6 +16,7 @@ import AddClass from "../Pages/Dashboard/Instructor/AddClass";
 import ManageUser from "../Pages/Dashboard/AdminDeshboard/ManageUser";
 import ManageClass from "../Pages/Dashboard/AdminDeshboard/ManageClass";
 import Payment from "../Pages/Dashboard/UserDeshboard/Payment";
+import Error from "../Pages/Error";
 
 
 
@@ -23,6 +24,7 @@ import Payment from "../Pages/Dashboard/UserDeshboard/Payment";
     {
       path: "/",
       element: <Main></Main>,
+      errorElement:<Error></Error>,
       children: [
         {
             path: '/',
@@ -49,6 +51,7 @@ import Payment from "../Pages/Dashboard/UserDeshboard/Payment";
     {
       path:'dashboard',
       element:<Dashboard></Dashboard>,
+      errorElement:<Error></Error>,
       children:[
         {
           path:'myselected',
@@ -56,7 +59,7 @@ import Payment from "../Pages/Dashboard/UserDeshboard/Payment";
         },
             {path:'payment/:id',
             element:<Payment></Payment>
-            ,  loader: ({params}) => fetch(`http://localhost:5000/carts/${params.id}`)
+            ,  loader: ({params}) => fetch(`https://summer-camp-server-suraiyatithi.vercel.app/carts/${params.id}`)
             },
   
         {

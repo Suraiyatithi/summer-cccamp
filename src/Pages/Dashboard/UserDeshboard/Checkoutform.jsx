@@ -3,6 +3,7 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 import AxiosSecure from "../../../hooks/AxiosSecure";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import './Checkoutform.css'
+import Swal from "sweetalert2";
 
 const Checkoutform = ({cart}) => {
     const stripe = useStripe();
@@ -87,15 +88,36 @@ const Checkoutform = ({cart}) => {
                 .then(res => {
                     console.log(res.data);
                     if (res.data.result.insertedId) {
-                        // display confirm
+                    //   
                     }
                 })
         }
+        // if(paymentIntent.status === 'succeeded'){
+        //     fetch(`http://localhost:5000/classes/seat/${cart._id}`, {
+        //         method: 'PATCH'
+        //     })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data)
+        //         if(data.modifiedCount){
+    
+        //             Swal.fire({
+        //                 position: 'top-end',
+        //                 icon: 'success',
+        //                 title: `  Successfully paid and Decrease available student !`,
+        //                 showConfirmButton: false,
+        //                 timer: 1500
+        //               })
+        //         }
+        //     })
+        // }
 
 
     }
+    
+    
     return (
-        <div>
+        <div className='payment-card'>
         
             <form className="w-2/3 m-8" onSubmit={handleSubmit}>
                 <CardElement

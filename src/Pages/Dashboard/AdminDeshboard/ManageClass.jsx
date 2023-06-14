@@ -19,7 +19,7 @@ const ManageClass = () => {
       };
     
       const submitFeedback = () => {
-        fetch(`http://localhost:5000/classes/feedback/${selectedClassId}`, {
+        fetch(`https://summer-camp-server-suraiyatithi.vercel.app/classes/feedback/${selectedClassId}`, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ const ManageClass = () => {
           });
       };
     const handleApproved=(item)=>{
-        fetch(`http://localhost:5000/classes/approved/${item._id}`, {
+        fetch(`https://summer-camp-server-suraiyatithi.vercel.app/classes/approved/${item._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -65,7 +65,7 @@ const ManageClass = () => {
         })
     }
     const handleDeny=(item)=>{
-        fetch(`http://localhost:5000/classes/deny/${item._id}`, {
+        fetch(`https://summer-camp-server-suraiyatithi.vercel.app/classes/deny/${item._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())

@@ -6,7 +6,7 @@ const Enrolled = () => {
     const [classes]=useQuerys();
     const [history,setHistory]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/payments')
+        fetch('https://summer-camp-server-suraiyatithi.vercel.app/payments')
         .then(res=>res.json())
         .then(data=>{
             setHistory(data)

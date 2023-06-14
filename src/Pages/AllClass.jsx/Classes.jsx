@@ -18,7 +18,7 @@ const {user}=useContext(AuthContext);
 console.log(classe)
 if(user && user.email){
   const cartitem={classId:_id,email:user.email,className,classImg,instructorName,price,availableSeat,enrolledStudent}
-  fetch('http://localhost:5000/carts',{
+  fetch('https://summer-camp-server-suraiyatithi.vercel.app/carts',{
     method:'POST',
     headers:{
       'content-type':'application/json'

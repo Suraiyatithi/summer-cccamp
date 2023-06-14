@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import useCart from '../../../Hooks/useCart';
 import { FaTrash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
@@ -7,6 +7,17 @@ import { Link } from 'react-router-dom';
 const MyselectClass = () => {
     const [carts,refetch]=useCart();
     console.log(carts);
+  
+    const [history,setHistory]=useState([]);
+    useEffect(()=>{
+        fetch('https://summer-camp-server-suraiyatithi.vercel.app/payments')
+        .then(res=>res.json())
+        .then(data=>{
+            setHistory(data)
+        }) },[])
+
+        const filteredData = carts.filter(item => !history.some(obj => obj.className === item.className));
+console.log(filteredData)
 
 
     const handleDelete = item => {
@@ -20,7 +31,7 @@ const MyselectClass = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/carts/${item._id}`, {
+                fetch(`https://summer-camp-server-suraiyatithi.vercel.app/carts/${item._id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -57,7 +68,7 @@ const MyselectClass = () => {
                     </thead>
                     <tbody>
                         {
-                            carts.map((item,index)=>
+                            filteredData.map((item,index)=>
                             <tr key={item._id}
                             
                             >

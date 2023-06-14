@@ -7,7 +7,7 @@ const AxiosSecure = () => {
     const {logOut}=useContext(AuthContext);
     const navigate=useNavigate();
     const axiossecure=axios.create({
-        baseURL:'http://localhost:5000',
+        baseURL:'https://summer-camp-server-suraiyatithi.vercel.app/',
     })
     useEffect(()=>{
         axiossecure.interceptors.request.use((config)=>{

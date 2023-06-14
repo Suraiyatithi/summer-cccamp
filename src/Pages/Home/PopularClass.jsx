@@ -10,7 +10,7 @@ const PopularClass = () => {
     const topSixStudents = sortedStudents.slice(0, 6);
     // console.log(topSixStudents)
     useEffect(()=>{
-        fetch('http://localhost:5000/classes')
+        fetch('https://summer-camp-server-suraiyatithi.vercel.app/classes')
         .then(res=>res.json())
         .then((data)=>{
       
