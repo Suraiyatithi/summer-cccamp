@@ -131,6 +131,15 @@ const AddClass = () => {
             
             />
          </div>
+         <div className="">
+          <input 
+              className="w-full ps-12 pe-12 p-2 m-2 hidden rounded shadow-lg border "
+            value=" "
+              {...register("feedback", { required: true })}
+              placeholder="feedback"
+            
+            />
+         </div>
            
            <div className="">
            <input style={{background:'DarkOrchid'}} className="btn w-75 ms-2 ps-5 pe-5 pt-2 pb-2 mb-12 text-white" value="Add Class" type="submit" />
