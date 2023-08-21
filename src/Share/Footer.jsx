@@ -5,7 +5,7 @@ import logo from '../assets/download.jpg'
 const Footer = () => {
     return (
         <footer>
-            <div className="footer p-10 bg-rose-900 text-neutral-content">
+            <div className="footer p-10 bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 text-neutral-content">
                 <div>
                     <img className='w-1/4 rounded-full' src={logo} alt="" />
                     <p>MAKEUP SCHOLLING<br />Providing reliable service since 2000</p>

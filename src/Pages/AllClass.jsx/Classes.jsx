@@ -69,7 +69,7 @@ else{
         <p>$<small>{price}</small></p>
     </div>
     <div className="card-actions">
-      <button  onClick={() => handleAddtoCart(classe)} style={{background:"DarkOrchid"}} className="btn btn-primary">Select</button>
+      <button  onClick={() => handleAddtoCart(classe)} className="btn text-white bg-gradient-to-r from-purple-200 via-purple-400 to-purple-800">Select</button>
     </div>
   </div>
 </div> 

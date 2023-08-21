@@ -20,7 +20,7 @@ const Inst = ({inst}) => {
                     <p className="uppercase">{instructorName}</p>
                     <p>{email}</p>
                     <p>{className}</p>
-                    <button style={{background:"DarkOrchid"}} className="btn btn-outline border-0 border-b-4 mt-4 ">See classes</button>
+                    <button  className="btn btn-outline text-white border-0 border-b-4 bg-gradient-to-r from-purple-200 via-purple-400 to-purple-800 mt-4 ">See classes</button>
                 </div>
             </div>   
         </div>

@@ -24,9 +24,9 @@ const Navbar = () => {
       {
             user ? <>
                 <span>{user?.displayName}</span>
-                <button style={{background:"DarkOrchid"}} onClick={handleLogOut} className="btn btn-ghost">Log out</button>
+                <button  onClick={handleLogOut} className="btn bg-gradient-to-r from-purple-200 via-purple-400 to-purple-800">Log out</button>
             </> : <>
-                <li><Link to="/login"><Button style={{background:"DarkOrchid"}} className='btn btn-ghost'>Log In</Button></Link></li>
+                <li><Link to="/login"><Button className='btn bg-gradient-to-r from-purple-200 via-purple-400 to-purple-800'>Log In</Button></Link></li>
             </>
         }
     </>

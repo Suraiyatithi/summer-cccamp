@@ -1,0 +1,51 @@
+.rate-us {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+/*   
+  .rate-us h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  } */
+  
+  .rate-us p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .rating-stars {
+    display: inline-block;
+  }
+  
+  .rating-stars input[type="radio"] {
+    display: none;
+  }
+  
+  .rating-stars label {
+    display: inline-block;
+    cursor: pointer;
+    color: #ddd;
+    font-size: 24px;
+    margin-right: 5px;
+  }
+  
+  .rating-stars label:hover,
+  .rating-stars label:hover ~ label,
+  .rating-stars input[type="radio"]:checked ~ label {
+    color: #ffcc00;
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3182ce;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #2a69ac;
+  }
+  

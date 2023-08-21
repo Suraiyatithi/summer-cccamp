@@ -1,8 +1,11 @@
-import img1 from '../../assets/slider2.jpg'
-import img2 from '../../assets/slider3.jpg'
-import img3 from '../../assets/slider4.jpg';
-import img4 from '../../assets/1700.jpg';
-
+// import img1 from '../../assets/slider2.jpg'
+// import img2 from '../../assets/slider3.jpg'
+// import img3 from '../../assets/slider4.jpg';
+// import img4 from '../../assets/1700.jpg';
+import img1 from '../../assets/portrait-young-girl-red-beret-painting-her-lips-with-bright-lipstick-pink-background.jpg'
+import img2 from '../../assets/high-angle-beauty-products-arrangement-with-copy-space.jpg';
+import img3 from '../../assets/relaxed-beautiful-face-young-girl-with-clear-skin-pink-orchids-beauty-treatment-concept.jpg'
+import img4 from '../../assets/manicurist-master-makes-manicure-woman-s-hands-spa-treatment-concept.jpg'
 const Slider = () => {
     return (
         <div className=' mb-11'>
@@ -31,3 +34,58 @@ const Slider = () => {
 };
 
 export default Slider;
+// import React, { useState, useEffect } from 'react';
+// import img1 from '../../assets/slider2.jpg';
+// import img2 from '../../assets/slider3.jpg';
+// import img3 from '../../assets/slider4.jpg';
+// import img4 from '../../assets/1700.jpg';
+
+// const Slider = () => {
+//   const images = [img1, img2, img3, img4];
+//   const [activeIndex, setActiveIndex] = useState(0);
+
+//   useEffect(() => {
+//     console.log('Active Index:', activeIndex); // Debugging
+//     const interval = setInterval(() => {
+//       // Calculate the next index
+//       const nextIndex = (activeIndex + 1) % images.length;
+//       setActiveIndex(nextIndex);
+//     }, 5000); // Change slide every 5 seconds
+
+//     return () => {
+//       clearInterval(interval);
+//     };
+//   }, [activeIndex, images.length]);
+
+//   const sliderStyle = {
+//     display: 'flex',
+//     width: `${images.length * 100}%`,
+//     transition: 'transform 0.5s ease-in-out',
+//     transform: `translateX(-${(100 / images.length) * activeIndex}%)`,
+//   };
+
+//   const imageStyle = {
+//     maxWidth: '100%',
+//   };
+
+//   return (
+//     <div className='mb-11'>
+//       <div className='carousel w-full' style={sliderStyle}>
+//         {images.map((image, index) => {
+//           console.log('Rendering Image:', index, image); // Debugging
+//           return (
+//             <div key={index} className='carousel-item w-full'>
+//               <img src={image} style={imageStyle} alt={`Slider ${index + 1}`} />
+//             </div>
+//           );
+//         })}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Slider;
+
+
+
+
