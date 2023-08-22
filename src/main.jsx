@@ -1,5 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 import './index.css'
 import {
@@ -15,6 +17,7 @@ import {
 } from '@tanstack/react-query'
 
 const queryClient = new QueryClient()
+AOS.init();
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
      <QueryClientProvider client={queryClient}>

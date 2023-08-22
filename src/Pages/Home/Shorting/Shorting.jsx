@@ -1,35 +1,79 @@
-import React from 'react';
+// import React from 'react';
 
 
-const Shorting = ({pic}) => {
-    // const styles = useSpring({
-    //     from: { opacity: 0, transform: 'scale(0.5)' },
-    //     to: { opacity: 1, transform: 'scale(1)' },
-    //     config: { duration: 6000 }
-    //   });
-const{classImg,className,enrolledStuden}=pic
-    return (
-        <div>
-            {/* <h6>{className}</h6>
-     
-  <div className="w-full text-center ml-11">
-  <animated.img
-      src={classImg}
-      alt="Animated Image"
-      style={styles}
-    /></div>  */}
-<div className="card w-96 glass">
-  <figure><img src={classImg} alt="car!"/></figure>
-  <div className="card-body">
-    <h2 className="card-title">{className}</h2>
-    <p>Stay with Beauty.Be confident.</p>
-    {/* <div className="card-actions justify-end"> */}
-      {/* <button className="btn btn-primary">Learn now!</button> */}
-    {/* </div> */}
-  </div>
-</div>
-</div>
-    );
+// const Shorting = ({pic}) => {
+   
+// const{classImg,className,enrolledStuden}=pic
+//     return (
+//         <div>
+          
+// <div className="card w-96 glass">
+//   <figure><img src={classImg} alt="car!"/></figure>
+//   <div className="card-body">
+//     <h2 className="card-title">{className}</h2>
+//     <p>Stay with Beauty.Be confident.</p>
+
+//   </div>
+// </div>
+// </div>
+//     );
+// };
+
+// export default Shorting;
+import React, { useState } from 'react';
+import ReactCardFlip from 'react-card-flip';
+
+const Shorting = ({ pic }) => {
+  const { classImg, className, enrolledStuden } = pic;
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleCardClick = () => {
+    setIsFlipped(!isFlipped);
+  };
+
+  const handleCardHover = () => {
+    setIsFlipped(!isFlipped);
+  };
+
+  return (
+    <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+      <div 
+        className="card w-96 glass bg-purple-300"
+        onClick={handleCardClick}
+        onMouseEnter={handleCardHover}
+        onMouseLeave={handleCardHover}
+      >
+        <figure><img src={classImg} alt="car!" /></figure>
+        <div className="card-body">
+          <h2 className="card-title">{className}</h2>
+          <p>Stay with Beauty. Be confident.</p>
+        </div>
+      </div>
+
+      <div
+        className="card w-96 glass"
+        onClick={handleCardClick}
+        onMouseEnter={handleCardHover}
+        onMouseLeave={handleCardHover}
+      >
+        <FlippedCard pic={pic} />
+      </div>
+    </ReactCardFlip>
+  );
+};
+
+const FlippedCard = ({ pic }) => {
+  const { classImg, className, enrolledStuden } = pic;
+
+  return (
+    <div className="card flipped-card w-96 glass">
+      <figure><img src={classImg} alt="car!" /></figure>
+      <div className="card-body">
+        <h2 className="card-title">{className}</h2>
+        <p>Stay with Beauty. Be confident.</p>
+      </div>
+    </div>
+  );
 };
 
 export default Shorting;

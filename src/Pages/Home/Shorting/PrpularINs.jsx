@@ -30,6 +30,7 @@
 // export default PrpularINs;
 import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
+import { FaBeer, FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 const PrpularINs = ({ pic }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -62,7 +63,7 @@ const PrpularINs = ({ pic }) => {
     <div>
       
       <div
-        className="w-full text-center ml-11"
+        className=" carousel-item w-full text-center ml-11"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onTouchStart={handleTouchStart}
@@ -100,6 +101,10 @@ const PrpularINs = ({ pic }) => {
             }}
           >
             {instructorName}
+          <br />
+          <FaFacebookF></FaFacebookF>
+          <FaInstagram></FaInstagram>
+          <FaWhatsapp></FaWhatsapp>
           </div>
         )}
       </div>

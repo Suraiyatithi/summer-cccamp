@@ -20,9 +20,9 @@ const PopularClass = () => {
 
     return (
         <div>
-         <p className='text-center '>___________________________________</p>
+         <p className='text-center text-rose-900'>___________________________________</p>
           <h2 className='text-2xl md:text-4xl font-bold text-center text-purple leading-tight'>Popular Class</h2>
-          <p className='text-center'>___________________________________</p>
+          <p className='text-center text-rose-900'>___________________________________</p>
 <div className='grid grid-cols-1 md:grid-cols-3 text-center m-8'>
 {
         topSixStudents.map(pic=><Shorting key={pic._id} pic={pic}></Shorting>)
@@ -34,7 +34,7 @@ const PopularClass = () => {
        <p className='text-center '>___________________________________</p>
           <h2 className='text-center text-2xl md:text-4xl font-bold text-purple leading-tight'>Popular Instructor</h2>
           <p className='text-center'>___________________________________</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 text-center m-8">
+        <div className="grid grid-cols-1 md:grid-cols-6 text-center mt-8 text-center mb-8">
         {
         topSixStudents.map(pic=><PrpularINs key={pic._id} pic={pic}></PrpularINs>)
 }

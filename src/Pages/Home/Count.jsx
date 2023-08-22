@@ -90,25 +90,25 @@ const Count = () => {
           <span className="countdown font-mono text-4xl md:text-5xl">
             <span style={{ "--value": days }}></span>
           </span>
-          +Classes
+          Days
         </div>
         <div className="flex flex-col p-2 md:p-5 md:pl-12 md:pr-12 bg-gradient-to-r from-purple-200 via-purple-400 to-purple-800 rounded-box text-neutral-content">
           <span className="countdown font-mono text-4xl md:text-5xl">
             <span style={{ "--value": hours }}></span>
           </span>
-          +Instructor
+          Hours
         </div>
         <div className="flex flex-col p-2 md:p-5 md:pl-12 md:pr-12 bg-gradient-to-r from-purple-200 via-purple-400 to-purple-800 rounded-box text-neutral-content">
           <span className="countdown font-mono text-4xl md:text-5xl">
             <span style={{ "--value": minutes }}></span>
           </span>
-          +Student
+          Minutes
         </div>
         <div className="flex flex-col p-2 md:p-5 md:pl-12 md:pr-12 bg-gradient-to-r from-purple-200 via-purple-400 to-purple-800 rounded-box text-neutral-content">
           <span className="countdown font-mono text-4xl md:text-5xl">
             <span style={{ "--value": seconds }}></span>
           </span>
-          Enrolled
+          Seconds
         </div>
       </div>
     </div>

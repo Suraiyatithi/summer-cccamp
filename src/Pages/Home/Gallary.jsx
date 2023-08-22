@@ -7,6 +7,8 @@ import img4 from '../../assets/high-fashion-look-glamor-closeup-portrait-beautif
 import img6 from '../../assets/beautiful-girl-stands-near-walll-with-leaves.jpg';
 import './Allcss/all.css';
 import bg6 from '../../assets/pexels-pixabay-433244.jpg'
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 const images = [
   { id: 1, src: img6, category: 'classic' },
@@ -25,7 +27,17 @@ const Gallery = () => {
   };
 
   const filteredImages = selectedCategory === 'all' ? images : images.filter(img => img.category === selectedCategory);
+  const triggerAnimations = () => {
+    AOS.refresh(); // Refresh AOS to trigger animations
+};
 
+// Attach the scroll event listener
+React.useEffect(() => {
+    window.addEventListener('scroll', triggerAnimations);
+    return () => {
+        window.removeEventListener('scroll', triggerAnimations);
+    };
+}, []);
   return (
   <div className="background" style={{backgroundImage:`url(${bg6})`}}>
     <div className="bg">
@@ -42,7 +54,7 @@ const Gallery = () => {
         <div className='column'>
           {filteredImages.map(image => (
             <div key={image.id} className='image-item'>
-              <img className='hoverable-image' src={image.src} alt={`Image ${image.id}`} />
+              <img data-aos="fade-left" className='hoverable-image w-80' src={image.src} alt={`Image ${image.id}`} />
             </div>
           ))}
         </div>
