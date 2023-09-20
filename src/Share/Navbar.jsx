@@ -14,8 +14,11 @@ const Navbar = () => {
     }
     const navOption =<>
      <li><Link>Home</Link></li>
-     <li><Link to='/instructor'>Instructor</Link></li> 
+     <li><Link to='/instructor'>Instructor </Link></li> 
       <li><Link to='/allclass'>Classess</Link></li>
+      <li><Link to='/instructor'>Popular</Link></li> 
+      <li><Link to='/instructor'>Offer</Link></li> 
+      <li><Link to='/instructor'>Blog</Link></li> 
      {
         user && 
         <li><Link to='/dashboard'>DashBoard</Link></li>

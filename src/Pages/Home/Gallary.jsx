@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
-import img1 from '../../assets/young-beautiful-stylish-woman-wedding-dress (1).jpg';
-import img2 from '../../assets/beautiful-young-woman-wearing-sari.jpg';
-import img3 from '../../assets/pexels-dhally-romy-12952754.jpg';
-import img5 from '../../assets/black-woman-with-light-pink-lips-sending-kiss.jpg';
-import img4 from '../../assets/high-fashion-look-glamor-closeup-portrait-beautiful-sexy-stylish-blond-caucasian-young-woman-model-with-bright-makeup.jpg';
-import img6 from '../../assets/beautiful-girl-stands-near-walll-with-leaves.jpg';
+// import img1 from '../../assets/young-beautiful-stylish-woman-wedding-dress (1).jpg';
+// import img2 from '../../assets/beautiful-young-woman-wearing-sari.jpg';
+// import img3 from '../../assets/pexels-dhally-romy-12952754.jpg';
+// import img5 from '../../assets/black-woman-with-light-pink-lips-sending-kiss.jpg';
+// import img4 from '../../assets/high-fashion-look-glamor-closeup-portrait-beautiful-sexy-stylish-blond-caucasian-young-woman-model-with-bright-makeup.jpg';
+// import img6 from '../../assets/beautiful-girl-stands-near-walll-with-leaves.jpg';
 import './Allcss/all.css';
 import bg6 from '../../assets/pexels-pixabay-433244.jpg'
 import 'aos/dist/aos.css';
 import AOS from 'aos';
+import img1 from '../../assets/young-beautiful.jpg'
+import img2 from '../../assets/indian2.jpg';
+import img3 from '../../assets/pexels-dhally.jpg';
+import img4 from '../../assets/high-fashion.jpg';
+import img5 from '../../assets/black-woman.jpg';
+import img6 from '../../assets/beautiful-girl-stands-near-walll-with-leaves2.jpg';
 
 const images = [
   { id: 1, src: img6, category: 'classic' },
@@ -39,7 +45,7 @@ React.useEffect(() => {
     };
 }, []);
   return (
-  <div className="background" style={{backgroundImage:`url(${bg6})`}}>
+  <div className="background mt-24 mb-24" style={{backgroundImage:`url(${bg6})`}}>
     <div className="bg">
     <p className='text-center'>___________________________________</p>
           <h2 className='text-2xl text-center md:text-4xl font-bold text-purple leading-tight'>Our Beauty Lab</h2>

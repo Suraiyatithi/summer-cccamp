@@ -1,9 +1,9 @@
-import React from 'react';
+
 import  { useState } from 'react';
-import './Extra.css'
+import '../Pages/Home/Allcss/all.css'
 import { FaBeer, FaStar } from 'react-icons/fa';
 import Swal from 'sweetalert2';
-
+import bg from '../assets/givestar.jpg'
 const Extra = () => {
     
       const [rating, setRating] = useState(null);
@@ -30,6 +30,7 @@ const Extra = () => {
       };
     
       return (
+            <div className="background p-5 mb-5" style={{backgroundImage:`url(${bg})`}}>
         <section className="rate-us">
           <p className='text-center '>___________________________________</p>
           <h2 className='text-2xl md:text-4xl font-bold text-purple leading-tight'>Rate Us</h2>
@@ -49,6 +50,7 @@ const Extra = () => {
           </div>
           <button   className="submit-button bg-gradient-to-r from-purple-200 via-purple-400 to-purple-800" onClick={handleSubmit}>Submit</button>
         </section>
+        </div>
       );
     };
     

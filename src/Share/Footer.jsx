@@ -18,6 +18,43 @@ const Footer = () => {
                         <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
                     </div>
                 </div>
+                <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-14  text-center">
+                    <div className="">
+                        <h1>We Support</h1>
+                        <p>_________________________</p>
+                        <p className='p-2'>Business World</p>
+                        <p className='p-2'>Self emploment</p>
+                        <p className='p-2'>National employment</p>
+                        <p className='p-2'>Socialization</p>
+                        <p className='p-2'>Globalization</p>
+                        <p className='p-2'>People impowerment</p>
+                        <p className='p-2'>Earning placement</p>
+                    </div>
+                    <div className="">
+                        <h1>We Help</h1>
+                        <p>_________________________</p>
+                        <p className='p-2'>To earning</p>
+                        <p className='p-2'>Support Family</p>
+                        <p className='p-2'>emploment policy</p>
+                        <p className='p-2'>Socialization</p>
+                        <p className='p-2'>Make skilled</p>
+                        <p className='p-2'>National development</p>
+                        <p className='p-2'>Self improvment</p>
+                    </div>
+                    <div className="">
+                        <h1>We are available</h1>
+                        <p>_________________________</p>
+                        <p className='p-2'>Facebook</p>
+                        <p className='p-2'>Instagram</p>
+                        <p className='p-2'>Linkedln</p>
+                        <p className='p-2'>Twiter</p>
+                        <p className='p-2'>Whats app</p>
+                       <div className="">
+                        <input className='p-2' type="text" />
+                        <button className='m-2 btn bg-gradient-to-r from-purple-200 via-purple-400 to-purple-800'>Send</button>
+                       </div>
+                    </div>
+                </div>
             </div>
             <div className="p-2 footer-center bg-nutral text-base-content">
                     <div>

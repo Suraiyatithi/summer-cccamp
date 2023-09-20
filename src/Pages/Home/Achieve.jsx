@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import img from '../../assets/close-up-elegant-beauty-selfcare-treatment.jpg'
+import img from '../../assets/flower.jpg'
 import img6 from '../../assets/NicePng_purple-flowers-png_141256.png';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
@@ -46,13 +46,13 @@ const Achieve = () => {
                
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 mt-12">
                  <div className="col p-6">
-                 <div className=" p-8 bg-pink-200  " data-aos="fade-righ">
+                 <div className=" p-8 bg-pink-200 rounded-full shadow-lg " data-aos="fade-righ">
                     <p className='text-7xl text-rose-900'>{count}+</p>
                     <p>Happy Student</p>
                     </div>
                  </div>
                     <div className="col p-6 mt-20">
-                    <div className=" p-8  bg-pink-200 "data-aos="fade-righ">
+                    <div className=" p-8  bg-pink-200 rounded-full shadow-lg"data-aos="fade-righ">
                     <p className='text-7xl text-rose-900'>{count}+</p>
                     <p>Satisfied Student</p>
                 </div>

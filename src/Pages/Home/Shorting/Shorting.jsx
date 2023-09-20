@@ -38,7 +38,8 @@ const Shorting = ({ pic }) => {
   return (
     <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
       <div 
-        className="card w-96 glass bg-purple-300"
+        className="card w-96 glass bg-purple-300 mb-12"
+        style={{height:'20rem'}}
         onClick={handleCardClick}
         onMouseEnter={handleCardHover}
         onMouseLeave={handleCardHover}
@@ -51,7 +52,8 @@ const Shorting = ({ pic }) => {
       </div>
 
       <div
-        className="card w-96 glass"
+        className="card w-96 glass mb-12"
+        style={{height:'20rem'}}
         onClick={handleCardClick}
         onMouseEnter={handleCardHover}
         onMouseLeave={handleCardHover}
