@@ -30,7 +30,7 @@ const Whatdo = () => {
                   <div className="divide-x-8 divide-violet-900 "></div> 
                     </div>
                     <div className="w-full lg:w-2/5 sm:w-full " data-aos="fade-left">
-                        <img src={img1} alt="" />
+                        <img className='hidden sm:block' src={img1} alt="" />
                     </div>
                 </div>
                 <div className="flex flex-col sm:flex-row">

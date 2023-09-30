@@ -4,6 +4,7 @@ import '../Pages/Home/Allcss/all.css'
 import { FaBeer, FaStar } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import bg from '../assets/givestar.jpg'
+import fly from '../assets/clipart514179.png'
 const Extra = () => {
     
       const [rating, setRating] = useState(null);
@@ -32,9 +33,15 @@ const Extra = () => {
       return (
             <div className="background p-5 mb-5" style={{backgroundImage:`url(${bg})`}}>
         <section className="rate-us">
-          <p className='text-center '>___________________________________</p>
-          <h2 className='text-2xl md:text-4xl font-bold text-purple leading-tight'>Rate Us</h2>
-          <p className='text-center'>___________________________________</p>
+        <div className="relative">
+      <div className='flex mx-auto lg:ml-56 -mb-10 s'>
+       
+       <img className='w-36 mx-auto ' src={fly} alt="" />
+       </div>
+       <p className='text-center text-rose-900 '>___________________________________ </p>
+        <h2 className='text-2xl md:text-4xl font-bold text-center text-purple leading-tight'>Rate Us</h2>
+        <p className='text-center text-rose-900'>___________________________________</p>
+      </div>
           <p>We would love to hear your feedback. Please take a moment to rate your experience with our website.</p>
           <div className="rating-stars">
             <input className='' type="radio" id="star5" name="rating" value="5" onChange={handleRatingChange} />

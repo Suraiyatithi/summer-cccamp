@@ -15,7 +15,7 @@ import img3 from '../../assets/pexels-dhally.jpg';
 import img4 from '../../assets/high-fashion.jpg';
 import img5 from '../../assets/black-woman.jpg';
 import img6 from '../../assets/beautiful-girl-stands-near-walll-with-leaves2.jpg';
-
+import fly from '../../assets/clipart514179.png'
 const images = [
   { id: 1, src: img6, category: 'classic' },
   { id: 2, src: img5, category: 'classic' },
@@ -47,9 +47,15 @@ React.useEffect(() => {
   return (
   <div className="background mt-24 mb-24" style={{backgroundImage:`url(${bg6})`}}>
     <div className="bg">
-    <p className='text-center'>___________________________________</p>
-          <h2 className='text-2xl text-center md:text-4xl font-bold text-purple leading-tight'>Our Beauty Lab</h2>
-          <p className='text-center'>___________________________________</p>
+    <div className="relative">
+      <div className='flex mx-auto lg:ml-56 -mb-10 s'>
+       
+       <img className='w-36 mx-auto ' src={fly} alt="" />
+       </div>
+       <p className='text-center text-rose-900 '>___________________________________ </p>
+        <h2 className='text-2xl md:text-4xl font-bold text-center text-purple leading-tight'>Explore Our Gallery</h2>
+        <p className='text-center text-rose-900'>___________________________________</p>
+      </div>
       <div className='gallery'>
       <div className='categories'>
         <button className='text-xl p-3 m-8 hover:bg-purple-500 text-white' onClick={() => handleCategoryChange('all')}>Show All</button>
