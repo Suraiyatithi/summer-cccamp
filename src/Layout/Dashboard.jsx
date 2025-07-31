@@ -28,26 +28,28 @@ const Dashboard = () => {
 
                     {
                         isAdmin &&
-                          <>  <li><NavLink to="/"><FaHome></FaHome>HOME</NavLink></li>
+                          <>  <li><NavLink to="/dashboard/userhome"><FaHome></FaHome>User HOME</NavLink></li>
                             <li><NavLink to="/dashboard/manageclass"> <FaSchool/> Manage Classes</NavLink></li>
                             <li><NavLink to="/dashboard/manageuser"><FaUserAlt/> Manage users</NavLink></li>
-                          
+                          <li><NavLink to="/"><FaHome></FaHome>Go Back</NavLink></li>
                             
                         </> 
                     }
                     {
                         isInstructor &&
                         <>
-                        <li><NavLink to="/"><FaHome></FaHome> Home</NavLink></li>
+                        <li><NavLink to="/dashboard/userhome"><FaHome></FaHome>User Home</NavLink></li>
                         <li><NavLink to="/dashboard/myclass"><FaUserGraduate/> My Classes</NavLink></li>
                         <li><NavLink to="/dashboard/addclass"><FaPlusSquare/>Add a Class</NavLink></li>
+                        <li><NavLink to="/"><FaHome></FaHome>Go Back</NavLink></li>
                     </>
                     }
                     {
                        ! isAdmin && !isInstructor &&
                        
                         <>
-                            <li><NavLink to="/"><FaHome></FaHome> User Home</NavLink></li>
+                         <li><NavLink to="/dashboard/userhome"><FaHome></FaHome>User Home</NavLink></li>
+                            <li><NavLink to="/"><FaHome></FaHome> Go Back</NavLink></li>
                             <li><NavLink to="/dashboard/myselected"><FaMapPin/>My Selected Class</NavLink></li>
                             <li><NavLink to="/dashboard/myenroll"><FaWallet></FaWallet>my enrolled class</NavLink></li>
                             

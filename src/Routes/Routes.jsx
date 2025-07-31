@@ -17,6 +17,9 @@ import ManageUser from "../Pages/Dashboard/AdminDeshboard/ManageUser";
 import ManageClass from "../Pages/Dashboard/AdminDeshboard/ManageClass";
 import Payment from "../Pages/Dashboard/UserDeshboard/Payment";
 import Error from "../Pages/Error";
+import OfferPage from "../Pages/Offer/Offer";
+import BlogPage from "../Pages/Blog/Blog";
+import UserHome from "../Share/Userhome";
 
 
 
@@ -45,6 +48,13 @@ import Error from "../Pages/Error";
         {
           path:'/allclass',
           element:<Allclass></Allclass>
+        },{
+          path:'/offer',
+          element:<OfferPage></OfferPage>
+        },
+        {
+          path:'/blog',
+          element:<BlogPage></BlogPage>
         }
       ]
     },
@@ -86,6 +96,10 @@ import Error from "../Pages/Error";
         {
           path:'manageclass',
           element:<ManageClass></ManageClass>
+        },
+        {
+          path:'userhome',
+          element:<UserHome></UserHome>
         }
       ]
     }
