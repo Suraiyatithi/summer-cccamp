@@ -101,7 +101,7 @@ const Testmonial = () => {
                 src={item.img}
                 alt={item.name}
               /> */}
-               <img style={{height:'6rem',width:"6rem"}} className='round' src={per3} alt="" />
+               <img style={{height:'4rem',width:"4rem"}} className='round' src={per3} alt="" />
               <p className="text-lg italic leading-relaxed max-w-2xl">
                 “{item.text}”
               </p>

@@ -1,6 +1,5 @@
 import React from 'react';
 import bg from '../../assets/summer-contact.jpg'
-import bg2 from '../../assets/pink-glitters.jpg'
 import { Link } from 'react-router-dom';
 import './Allcss/all.css';
 
